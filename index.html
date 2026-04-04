@@ -35,7 +35,7 @@ footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);co
 </style>
 </head>
 <body>
-<nav id="navbar"><a href="#" class="nav-brand">Harmony<span>Tutor</span></a><ul class="nav-links"><li><a href="#funzioni">Funzioni</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#contatti">Contatti</a></li></ul><a href="#prezzi" class="nav-cta">Acquista</a><button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('open')" aria-label="Menu">&#9776;</button></nav>
+<nav id="navbar"><a href="#" class="nav-brand">Harmony<span>Tutor</span></a><ul class="nav-links"><li><a href="#funzioni">Funzioni</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#risorse">Manuale</a></li><li><a href="#contatti">Contatti</a></li></ul><a href="#prezzi" class="nav-cta">Acquista</a><button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('open')" aria-label="Menu">&#9776;</button></nav>
 
 <section class="hero"><div class="container">
 <div class="hero-badge">L'unico editor SATB con analisi armonica in tempo reale</div>
@@ -100,7 +100,7 @@ footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);co
 
 <section id="prezzi"><div class="container"><div style="text-align:center"><span class="section-tag">Prezzi</span><h2 class="section-title" style="text-align:center">Acquisto una tantum</h2><p class="section-desc center">Nessun abbonamento. Aggiornamenti inclusi.</p></div>
 <div class="pricing-grid fade-in" style="max-width:640px;margin:48px auto 0">
-<div class="price-card featured"><div class="price-tier">Licenza completa</div><div class="price-amount">59&euro;</div><div class="price-note">una tantum &mdash; macOS e Windows</div><ul class="price-features"><li>Tutte le funzionalit&agrave; senza limiti</li><li>Analisi armonica in tempo reale</li><li>Realizzatore corali automatico</li><li>Export PDF, MIDI, MusicXML, PNG</li><li>Aggiornamenti inclusi</li><li>Supporto via email</li></ul><a href="#" class="price-btn price-btn-primary" onclick="alert('Disponibile a breve!');return false">Disponibile a breve</a></div>
+<div class="price-card featured"><div class="price-tier">Licenza completa</div><div class="price-amount">59&euro;</div><div class="price-note">una tantum &mdash; macOS e Windows &mdash; IVA esclusa dove applicabile</div><ul class="price-features"><li>Tutte le funzionalit&agrave; senza limiti</li><li>Analisi armonica in tempo reale</li><li>Realizzatore corali automatico</li><li>Export PDF, MIDI, MusicXML, PNG</li><li>Aggiornamenti inclusi</li><li>Supporto via email</li></ul><a href="#" class="price-btn price-btn-primary" onclick="alert('Disponibile a breve!');return false">Acquista ora</a></div>
 <div class="price-card"><div class="price-tier">Istituto</div><div class="price-amount">Personalizzato</div><div class="price-note">licenze multiple per aule e laboratori</div><ul class="price-features"><li>Tutte le funzionalit&agrave;</li><li>Licenze per aula/laboratorio</li><li>Supporto dedicato</li><li>Fatturazione istituzionale</li><li>Sconto volume</li></ul><a href="mailto:harmonytutorpro@gmail.com" class="price-btn price-btn-secondary">Contattaci</a></div>
 </div></div></section>
 
@@ -110,12 +110,18 @@ footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);co
 <a href="#" class="btn-primary" onclick="alert('Download disponibile a breve!');return false">Scarica la demo gratuita</a>
 </div></section>
 
+<section id="risorse"><div class="container" style="text-align:center">
+<span class="section-tag">Risorse</span><h2 class="section-title" style="text-align:center">Documentazione</h2>
+<p class="section-desc center">Scarica il manuale utente completo con tutte le funzionalit&agrave;, scorciatoie e istruzioni dettagliate.</p>
+<a href="Harmony_Tutor_Manuale.pdf" class="btn-secondary" download>&#8595; Scarica il manuale utente (PDF)</a>
+</div></section>
+
 <section class="cta" id="contatti"><div class="container"><div class="cta-box fade-in">
 <h2>Contattaci</h2><p>Per informazioni, richieste commerciali o collaborazioni.</p>
 <a href="mailto:harmonytutorpro@gmail.com" class="btn-primary">harmonytutorpro@gmail.com</a>
 </div></div></section>
 
-<footer><div class="footer-links"><a href="#funzioni">Funzioni</a><a href="#prezzi">Prezzi</a><a href="mailto:harmonytutorpro@gmail.com">Contatti</a></div><p>Harmony Tutor &mdash; Il correttore intelligente di armonia tonale e scrittura a pi&ugrave; voci</p><p style="margin-top:8px">&copy; 2026 &mdash; Tutti i diritti riservati</p></footer>
+<footer><div class="footer-links"><a href="#funzioni">Funzioni</a><a href="#prezzi">Prezzi</a><a href="#risorse">Manuale</a><a href="mailto:harmonytutorpro@gmail.com">Contatti</a></div><p>Harmony Tutor &mdash; Il correttore intelligente di armonia tonale e scrittura a pi&ugrave; voci</p><p style="margin-top:8px">&copy; 2026 &mdash; Tutti i diritti riservati</p></footer>
 
 <script>const f=document.querySelectorAll('.fade-in'),o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:.15});f.forEach(e=>o.observe(e))</script>
 </body>
