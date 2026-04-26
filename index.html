@@ -41,10 +41,11 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto}
 footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:.82rem}footer a{color:var(--teal);text-decoration:none}.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap}
 @media(prefers-reduced-motion:no-preference){.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-toggle{display:block}nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}section{padding:60px 20px}.hero{padding-top:120px}.hero-buttons{flex-direction:column;align-items:center}.two-col{grid-template-columns:1fr}.cta-box{padding:40px 24px}}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;border:1px solid var(--border);font-size:.78rem;color:var(--text-muted);text-decoration:none;font-weight:600;transition:all .2s}.lang-switch:hover{border-color:var(--teal);color:var(--teal)}
 </style>
 </head>
 <body>
-<nav id="navbar"><a href="#" class="nav-brand">Harmony<span>Tutor</span></a><ul class="nav-links"><li><a href="#funzioni">Funzioni</a></li><li><a href="#didattica">Didattica</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#risorse">Manuale</a></li></ul><a href="#prezzi" class="nav-cta">Acquista</a><button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('open')" aria-label="Menu">&#9776;</button></nav>
+<nav id="navbar"><a href="#" class="nav-brand">Harmony<span>Tutor</span></a><ul class="nav-links"><li><a href="#funzioni">Funzioni</a></li><li><a href="#didattica">Didattica</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#risorse">Manuale</a></li><li><a href="en.html" class="lang-switch">EN</a></li></ul><a href="#prezzi" class="nav-cta">Acquista</a><button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('open')" aria-label="Menu">&#9776;</button></nav>
 
 <section class="hero"><div class="container">
 <div class="hero-badge">L'unico editor SATB con analisi armonica in tempo reale</div>
@@ -221,7 +222,7 @@ allowfullscreen></iframe>
 <a href="mailto:harmonytutorpro@gmail.com" class="btn-primary">harmonytutorpro@gmail.com</a>
 </div></div></section>
 
-<footer><div class="footer-links"><a href="#funzioni">Funzioni</a><a href="#didattica">Didattica</a><a href="#prezzi">Prezzi</a><a href="#risorse">Manuale</a><a href="mailto:harmonytutorpro@gmail.com">Contatti</a></div><p>Harmony Tutor &mdash; Il correttore intelligente di armonia tonale e scrittura a pi&ugrave; voci</p><p style="margin-top:8px">&copy; 2026 &mdash; Tutti i diritti riservati</p></footer>
+<footer><div class="footer-links"><a href="#funzioni">Funzioni</a><a href="#didattica">Didattica</a><a href="#prezzi">Prezzi</a><a href="#risorse">Manuale</a><a href="mailto:harmonytutorpro@gmail.com">Contatti</a><a href="en.html" class="lang-switch">EN</a></div><p>Harmony Tutor &mdash; Il correttore intelligente di armonia tonale e scrittura a pi&ugrave; voci</p><p style="margin-top:8px">&copy; 2026 &mdash; Tutti i diritti riservati</p></footer>
 
 <script>const f=document.querySelectorAll('.fade-in'),o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:.15});f.forEach(e=>o.observe(e))</script>
 </body>
