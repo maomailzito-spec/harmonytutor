@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L62VXGSS2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5L62VXGSS2');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmony Tutor — The intelligent tonal harmony checker</title>
+<meta name="description" content="SATB editor with real-time automatic harmonic analysis. Roman numerals and chord symbols. For students and teachers.">
+<meta name="google-site-verification" content="XWxD859m5EOPPwfENLN2mc8jLT4NnlyStMecXXqp_PE" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1923;--navy-light:#162030;--navy-card:#1a2a3c;--teal:#2ec4a0;--teal-dim:#1a8a70;--gold:#e8a838;--coral:#e8593c;--text:#d0d8e0;--text-bright:#eef2f5;--text-muted:#7a8a9a;--border:#243040;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--navy);color:var(--text);line-height:1.7;font-size:17px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,25,35,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--serif);font-size:1.25rem;color:var(--text-bright);text-decoration:none}.nav-brand span{color:var(--teal)}.nav-links{display:flex;gap:28px;list-style:none;align-items:center}.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}.nav-links a:hover{color:var(--teal)}.nav-cta{background:var(--teal);color:var(--navy);padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.88rem}.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;border:1px solid var(--border);font-size:.78rem;color:var(--text-muted);text-decoration:none;font-weight:600;transition:all .2s}.lang-switch:hover{border-color:var(--teal);color:var(--teal)}
+section{padding:100px 24px}.container{max-width:1080px;margin:0 auto}
+.hero{padding-top:160px;text-align:center;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(46,196,160,.08)0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-block;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:600;color:var(--teal);border:1px solid var(--teal-dim);background:rgba(46,196,160,.08);margin-bottom:28px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,3.8rem);color:var(--text-bright);line-height:1.15;margin-bottom:20px}.hero h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:1.15rem;color:var(--text-muted);max-width:620px;margin:0 auto 40px;line-height:1.8}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
+.btn-primary{background:var(--teal);color:var(--navy);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s;display:inline-flex;align-items:center;gap:8px}.btn-primary:hover{background:#25d4aa;transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,196,160,.25)}
+.btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;border:1px solid var(--border);transition:all .25s}.btn-secondary:hover{border-color:var(--text-muted);background:var(--navy-light)}
+.hero-img,.showcase-img{width:100%;max-width:100%;height:auto;border-radius:12px;border:1px solid var(--border);box-shadow:0 16px 50px rgba(0,0,0,.35);margin:24px auto;display:block}
+.problem{background:var(--navy-light)}.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.problem-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:28px;position:relative;overflow:hidden}.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral)}.problem-card h3{font-family:var(--serif);font-size:1.1rem;color:var(--text-bright);margin-bottom:12px}.problem-card p{color:var(--text-muted);font-size:.92rem}
+.section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}.section-title{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--text-bright);margin-bottom:16px;line-height:1.2}.section-desc{color:var(--text-muted);font-size:1.05rem;max-width:640px;margin-bottom:48px}.section-desc.center{margin-left:auto;margin-right:auto;text-align:center}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}.feature-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color .3s,transform .3s}.feature-card:hover{border-color:var(--teal-dim);transform:translateY(-4px)}.feature-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px;background:rgba(46,196,160,.1);color:var(--teal)}.feature-card h3{font-family:var(--serif);font-size:1.1rem;color:var(--text-bright);margin-bottom:10px}.feature-card p{color:var(--text-muted);font-size:.9rem;line-height:1.65}
+.showcase{text-align:center}.showcase-caption{color:var(--text-muted);font-size:.88rem;font-style:italic;margin-top:8px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}.two-col img{width:100%;height:auto}.two-col img.img-sm{width:auto;max-width:280px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px}.price-card{background:var(--navy-card);border:1px solid var(--border);border-radius:16px;padding:36px 28px;text-align:center;position:relative;transition:transform .3s}.price-card:hover{transform:translateY(-4px)}.price-card.featured{border-color:var(--teal)}.price-card.featured::before{content:'Recommended';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--navy);padding:4px 16px;border-radius:12px;font-size:.72rem;font-weight:700}.price-tier{font-size:.82rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.price-amount{font-family:var(--serif);font-size:2.8rem;color:var(--text-bright);margin-bottom:4px}.price-amount span{font-size:1rem;color:var(--text-muted)}.price-note{font-size:.82rem;color:var(--text-muted);margin-bottom:24px}.price-features{list-style:none;text-align:left;margin-bottom:28px}.price-features li{padding:6px 0;font-size:.88rem;color:var(--text-muted);display:flex;align-items:flex-start;gap:8px}.price-features li::before{content:'\2713';color:var(--teal);font-weight:700;flex-shrink:0}.price-btn{display:block;width:100%;padding:12px;border-radius:10px;text-align:center;text-decoration:none;font-weight:600;font-size:.92rem;transition:all .25s}.price-btn-primary{background:var(--teal);color:var(--navy)}.price-btn-primary:hover{background:#25d4aa}.price-btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}.price-btn-secondary:hover{border-color:var(--text-muted)}
+.cta{text-align:center;background:linear-gradient(180deg,var(--navy)0%,var(--navy-light)100%)}.cta-box{background:var(--navy-card);border:1px solid var(--border);border-radius:20px;padding:60px 40px;max-width:680px;margin:0 auto}.cta-box h2{font-family:var(--serif);font-size:2rem;color:var(--text-bright);margin-bottom:16px}.cta-box p{color:var(--text-muted);margin-bottom:32px}
+footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:.82rem}footer a{color:var(--teal);text-decoration:none}.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:no-preference){.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-toggle{display:block}nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}section{padding:60px 20px}.hero{padding-top:120px}.hero-buttons{flex-direction:column;align-items:center}.two-col{grid-template-columns:1fr}.cta-box{padding:40px 24px}}
+</style>
+</head>
+<body>
+
+<nav id="navbar"><a href="#" class="nav-brand">Harmony<span>Tutor</span></a><ul class="nav-links"><li><a href="#features">Features</a></li><li><a href="#teaching">Teaching</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#resources">Manual</a></li><li><a href="index.html" class="lang-switch">IT</a></li></ul><a href="#pricing" class="nav-cta">Buy Now</a><button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('open')" aria-label="Menu">&#9776;</button></nav>
+
+<section class="hero"><div class="container">
+<div class="hero-badge">The only SATB editor with real-time harmonic analysis</div>
+<h1>The intelligent checker<br>for <em>tonal harmony</em></h1>
+<p class="hero-sub">Write in four voices, get instant feedback on errors, cadences and voice-leading. Roman numerals and chord symbols in real time. For students and teachers.</p>
+<div class="hero-buttons"><a href="#pricing" class="btn-primary">&#8595; See pricing</a><a href="#features" class="btn-secondary">View features</a></div>
+<img src="img/Score.jpg" alt="Harmony Tutor" class="hero-img fade-in">
+</div></section>
+
+<section class="problem" id="problem"><div class="container">
+<span class="section-tag">The Problem</span><h2 class="section-title">Why Harmony Tutor exists</h2>
+<p class="section-desc">Harmony students get no immediate feedback at home. Mistakes accumulate and are only corrected in the next lesson.</p>
+<div class="problem-grid fade-in">
+<div class="problem-card"><h3>No feedback at home</h3><p>Students only discover their errors in class, when the context is already forgotten.</p></div>
+<div class="problem-card"><h3>Repetitive corrections</h3><p>Teachers keep flagging the same technical mistakes instead of focusing on musicality.</p></div>
+<div class="problem-card"><h3>No alternative</h3><p>There is currently no software offering real-time harmonic analysis on a professional SATB editor.</p></div>
+</div></div></section>
+
+<section id="demo-video">
+<div class="container fade-in" style="text-align:center;">
+<span class="section-tag">Video Demo</span>
+<h2 class="section-title">See Harmony Tutor in action</h2>
+<p class="section-desc center">Watch how the analysis engine reacts in real time to voice movement.</p>
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(480px, 1fr)); gap:24px; margin-top:32px;">
+
+<div>
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; border:1px solid var(--border); box-shadow:0 16px 50px rgba(0,0,0,.35);">
+<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+src="https://www.youtube.com/embed/X2OYmpsZNuw"
+title="Harmony Tutor — Presentation"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
+<p style="color:var(--text-muted); font-size:.88rem; margin-top:12px;">Harmony Tutor: Real-time harmonic analysis</p>
+</div>
+
+<div>
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; border:1px solid var(--border); box-shadow:0 16px 50px rgba(0,0,0,.35);">
+<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+src="https://www.youtube.com/embed/bm8QwWPHXFk"
+title="Harmony Tutor — Augmented Sixths vs Dominant"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
+<p style="color:var(--text-muted); font-size:.88rem; margin-top:12px;">Enharmonic change: augmented sixths vs dominant</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="features" style="background:var(--navy-light);"><div class="container"><div style="text-align:center"><span class="section-tag">Features</span><h2 class="section-title" style="text-align:center">Everything for tonal harmony</h2><p class="section-desc center">14-step analysis engine, 40+ SATB rules with exceptions, corpus-guided chorale realizer.</p></div>
+<div class="features-grid fade-in">
+<div class="feature-card"><div class="feature-icon">&#9833;</div><h3>Professional SATB Editor</h3><p>Four independent voices. All durations, accidentals, 24 keys. Grand Staff layout, ancient clefs, close and open voicing.</p></div>
+<div class="feature-card"><div class="feature-icon">&#9674;</div><h3>Real-time Analysis</h3><p>Roman numerals below and chord symbols above the staff. 14-step pipeline with a corpus of 260+ pieces.</p></div>
+<div class="feature-card"><div class="feature-icon">&#9651;</div><h3>40+ Rules with Exceptions</h3><p>Errors, warnings, exceptions. Each flag includes a code, description and suggestion. Context-sensitive.</p></div>
+<div class="feature-card"><div class="feature-icon">&#9835;</div><h3>Ornament Detector</h3><p>Passing tones, neighbor tones, appoggiaturas, anticipations, escape tones, suspensions and changing tones. Separated from chordal analysis.</p></div>
+<div class="feature-card"><div class="feature-icon">&#8634;</div><h3>Chorale Realizer</h3><p>Generates SATB from Roman numerals. Beam-search with 8 candidates. Soprano or bass constraints. Corpus-based suggestions.</p></div>
+<div class="feature-card"><div class="feature-icon">&#8599;</div><h3>Import / Export</h3><p>MIDI, MusicXML 4.0, PDF, PNG. MIDI format 0 (single track) and 1 (voice per track). Compatible with MuseScore, Finale, Sibelius.</p></div>
+</div></div></section>
+
+<section id="teaching" style="background:linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%); border-top: 1px solid var(--border);">
+<div class="container">
+<div style="text-align:center">
+<span class="section-tag">Teaching Ecosystem</span>
+<h2 class="section-title">Optimized teacher-student workflow</h2>
+<p class="section-desc center">Harmony Tutor digitizes assignment exchange and technical correction, allowing lessons to focus on aesthetic and interpretive aspects.</p>
+</div>
+<div style="background:var(--navy-card); border:1px solid var(--border); border-radius:20px; padding:40px; margin-top:40px;" class="fade-in">
+<div class="two-col">
+<div>
+<h3 style="font-family:var(--serif); color:var(--teal); font-size:1.8rem; margin-bottom:15px;">Assignment Management</h3>
+<p style="color:var(--text); margin-bottom:20px;">Harmony Tutor files are fully editable and streamline teaching communication:</p>
+<ul style="list-style:none; color:var(--text-muted); font-size:0.95rem;">
+<li style="margin-bottom:15px; display:flex; gap:12px;">
+<span style="color:var(--teal); font-weight:bold;">01.</span>
+<span><strong>Assignment:</strong> Teachers can send files containing <strong>figured bass or given melodies</strong>. Students work out the harmonization in the editor and see real-time harmonic analysis as they enter notes.</span>
+</li>
+<li style="margin-bottom:15px; display:flex; gap:12px;">
+<span style="color:var(--teal); font-weight:bold;">02.</span>
+<span><strong>Exchange:</strong> Native files can be shared via <strong>email or institutional platforms</strong> (Google Classroom, Moodle). Students without the software can still interact by exporting and importing in MusicXML format.</span>
+</li>
+<li style="margin-bottom:15px; display:flex; gap:12px;">
+<span style="color:var(--teal); font-weight:bold;">03.</span>
+<span><strong>Review &amp; Grading:</strong> Teachers analyze submissions with an immediate report on technical violations. They can focus on <strong>harmonic interpretation</strong>, modify parts and add text notes for assessment.</span>
+</li>
+</ul>
+</div>
+<div style="background:rgba(46,196,160,0.05); border:1px dashed var(--teal-dim); border-radius:12px; padding:30px; text-align:center;">
+<div style="font-size:3rem; margin-bottom:15px;">&#128194; &#8644; &#127891;</div>
+<h4 style="color:var(--text-bright); margin-bottom:10px;">Full Interoperability</h4>
+<p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>MusicXML 4.0</strong> export enables integration with all major notation software (Finale, Sibelius, MuseScore), ensuring flexibility across different platforms.</p>
+<div style="background:var(--navy-light); padding:10px; border-radius:8px; border:1px solid var(--border);">
+<strong style="color:var(--teal); font-size:0.8rem; text-transform:uppercase;">Institutional Solutions</strong><br>
+<span style="font-size:0.8rem;">Classroom packages and multi-seat licenses for Conservatories and Music Schools.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="problem-grid" style="margin-top:40px;">
+<div class="problem-card" style="border-top:3px solid var(--teal);">
+<h3>Real-time Feedback</h3>
+<p>Students get immediate feedback on technical errors during individual study. This reduces manual correction time in class, leaving more room for stylistic discussion.</p>
+</div>
+<div class="problem-card" style="border-top:3px solid var(--gold);">
+<h3>Objective Assessment</h3>
+<p>The analysis engine applies SATB rules rigorously, providing teachers with a verified technical baseline on which to build their own critical and interpretive review.</p>
+</div>
+</div>
+</div></section>
+
+<section class="showcase" style="background:var(--navy-light)"><div class="container">
+<span class="section-tag">In Action</span><h2 class="section-title" style="text-align:center">Analysis Panel</h2>
+<img src="img/Pannello_violaszioni.jpg" alt="Analysis panel" class="showcase-img fade-in">
+<p class="showcase-caption">Severity filters, expandable violations and recognized cadences</p>
+</div></section>
+
+<section class="showcase"><div class="container">
+<span class="section-tag">Dual View</span><h2 class="section-title" style="text-align:center">Roman numerals and chord symbols</h2>
+<p class="section-desc center">Functional notation below the staff, modern chord symbols above (C, Am, D7/F#, Dm7, G7...). Independently toggleable.</p>
+<img src="img/Sigle_Fr.png" alt="Chord symbols and Roman numerals" class="showcase-img fade-in">
+</div></section>
+
+<section class="showcase" style="background:var(--navy-light)"><div class="container">
+<span class="section-tag">Voice-leading</span><h2 class="section-title" style="text-align:center">See the voice-leading</h2>
+<p class="section-desc center"><strong style="color:var(--teal)">Green</strong> = allowed movements and cadences. <strong style="color:var(--gold)">Orange</strong> = warning. <strong style="color:var(--coral)">Red</strong> = error.</p>
+<img src="img/GrandStaff_Ger.png" alt="Voice-leading with colored lines" class="showcase-img fade-in">
+</div></section>
+
+<section class="showcase"><div class="container">
+<span class="section-tag">Ancient Clefs</span><h2 class="section-title" style="text-align:center">From Grand Staff to SATB and back</h2>
+<p class="section-desc center">Write in one layout, view in another. Grand Staff, ancient clefs, close voicing, open voicing. Notes remain unchanged.</p>
+<img src="img/Chiavi_Antiche.png" alt="Ancient SATB clefs" class="showcase-img fade-in">
+</div></section>
+
+<section class="showcase" style="background:var(--navy-light)"><div class="container"><div class="two-col">
+<img src="img/Colore_Voci.png" alt="Colored voices" class="showcase-img fade-in img-sm">
+<div><span class="section-tag">Visual Clarity</span><h2 class="section-title">One color per voice</h2><p class="section-desc">Soprano blue, Alto orange, Tenor green, Bass red. Instant identification.</p></div>
+</div></div></section>
+
+<section class="showcase"><div class="container"><div class="two-col">
+<div><span class="section-tag">Chorale Realizer</span><h2 class="section-title">From Roman numerals to SATB</h2><p class="section-desc">Enter the progression, the realizer generates four voices. Suggestions from a corpus of 260+ analyzed pieces.</p></div>
+<img src="img/Generatore_Corali.jpg" alt="Chorale generator" class="showcase-img fade-in">
+</div></div></section>
+
+<section id="pricing"><div class="container"><div style="text-align:center"><span class="section-tag">Pricing</span><h2 class="section-title" style="text-align:center">One-time purchase</h2><p class="section-desc center">No subscription. Updates included.</p></div>
+<div class="pricing-grid fade-in" style="max-width:640px;margin:48px auto 0">
+<div class="price-card featured"><div class="price-tier">Full License</div><div class="price-amount">&euro;59</div><div class="price-note">one-time &mdash; macOS and Windows &mdash; VAT excluded where applicable</div><ul class="price-features"><li>All features, no limits</li><li>Real-time harmonic analysis</li><li>Automatic chorale realizer</li><li>Export PDF, MIDI, MusicXML, PNG</li><li>Updates included</li><li>Email support</li></ul>
+<a href="https://harmonytutor.lemonsqueezy.com/checkout/buy/a5930998-3037-4c81-9990-2ebe269c7911" class="price-btn price-btn-primary" target="_blank" rel="noopener">Buy now</a>
+</div>
+<div class="price-card"><div class="price-tier">Institution</div><div class="price-amount">Custom</div><div class="price-note">multi-seat licenses for classrooms and labs</div><ul class="price-features"><li>All features</li><li>Classroom/lab licenses (Class Package)</li><li>Dedicated support</li><li>Institutional invoicing</li><li>Volume discount</li></ul><a href="mailto:harmonytutorpro@gmail.com" class="price-btn price-btn-secondary">Contact us</a></div>
+</div></div></section>
+
+<section style="background:var(--navy-light)"><div class="container" style="text-align:center">
+<span class="section-tag">Try for free</span><h2 class="section-title" style="text-align:center">Free 10-day trial</h2>
+<p class="section-desc center">Try all features with no limits for 10 days. No credit card required.</p>
+<div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.0.3/Harmony.Tutor-1.0.3-win.exe" class="btn-primary">Download for Windows (.exe)</a>
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.0.3/Harmony.Tutor-1.0.3-mac.dmg" class="btn-primary">Download for macOS (.dmg)</a>
+</div>
+</div></section>
+
+<section id="resources"><div class="container" style="text-align:center">
+<span class="section-tag">Resources</span><h2 class="section-title" style="text-align:center">Documentation</h2>
+<p class="section-desc center">Download the complete user manual with all features, shortcuts and detailed instructions.</p>
+<a href="Harmony_Tutor_Manuale.pdf" class="btn-secondary" download>&#8595; Download user manual (PDF)</a>
+</div></section>
+
+<section class="cta" id="contact"><div class="container"><div class="cta-box fade-in">
+<h2>Contact Us</h2><p>For information, business inquiries or collaborations.</p>
+<a href="mailto:harmonytutorpro@gmail.com" class="btn-primary">harmonytutorpro@gmail.com</a>
+</div></div></section>
+
+<footer><div class="footer-links"><a href="#features">Features</a><a href="#teaching">Teaching</a><a href="#pricing">Pricing</a><a href="#resources">Manual</a><a href="mailto:harmonytutorpro@gmail.com">Contact</a><a href="index.html" class="lang-switch">IT</a></div><p>Harmony Tutor &mdash; The intelligent checker for tonal harmony and multi-voice writing</p><p style="margin-top:8px">&copy; 2026 &mdash; All rights reserved</p></footer>
+
+<script>const f=document.querySelectorAll('.fade-in'),o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:.15});f.forEach(e=>o.observe(e))</script>
+
+</body>
+</html>
