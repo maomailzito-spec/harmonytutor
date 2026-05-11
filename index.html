@@ -1,75 +1,69 @@
-<section class="hero"><div class="container">
-<div class="hero-badge">L'unico editor SATB con analisi armonica in tempo reale</div>
-<h1>Correggi i tuoi esercizi di<br><em>armonia</em> all'istante</h1>
-<p class="hero-sub">Scrivi a quattro voci e ottieni un feedback immediato su errori, cadenze e condotta delle voci. L'app essenziale per studenti e docenti di Conservatorio.</p>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://harmonytutor.it/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Tutor — Il correttore intelligente di armonia tonale</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5L62VXGSS2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5L62VXGSS2');
+    </script>
 
-<div class="hero-buttons">
-    <a href="#download-demo" class="btn-primary">Scarica la Demo (10 Giorni)</a>
-    <a href="#demo-video" class="btn-secondary">Guarda le funzioni</a>
-</div>
-<span class="trust-text">✔ Download sicuro per macOS e Windows • Nessuna carta di credito</span>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Qui incolla tutto il CSS che avevi prima, assicurandoti che inizi con :root e finisca con } */
+        :root{--navy:#0f1923;--navy-light:#162030;--navy-card:#1a2a3c;--teal:#2ec4a0;--teal-dim:#1a8a70;--gold:#e8a838;--coral:#e8593c;--text:#d0d8e0;--text-bright:#eef2f5;--text-muted:#7a8a9a;--border:#243040;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--navy);color:var(--text);line-height:1.7;font-size:17px}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,25,35,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:var(--serif);font-size:1.25rem;color:var(--text-bright);text-decoration:none}.nav-brand span{color:var(--teal)}.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}.nav-links a:hover{color:var(--teal)}.nav-cta{background:var(--teal);color:var(--navy);padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.88rem}.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+        section{padding:100px 24px}.container{max-width:1080px;margin:0 auto}
+        .hero{padding-top:140px;text-align:center;position:relative;overflow:hidden}
+        .hero-badge{display:inline-block;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:600;color:var(--teal);border:1px solid var(--teal-dim);background:rgba(46,196,160,.08);margin-bottom:28px}
+        .hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,3.8rem);color:var(--text-bright);line-height:1.15;margin-bottom:20px}.hero h1 em{font-style:italic;color:var(--teal)}
+        .hero-sub{font-size:1.15rem;color:var(--text-muted);max-width:620px;margin:0 auto 30px;line-height:1.8}
+        .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+        .btn-primary{background:var(--teal);color:var(--navy);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s;display:inline-flex;align-items:center;gap:8px}.btn-primary:hover{background:#25d4aa;transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,196,160,.25)}
+        .btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;border:1px solid var(--border);transition:all .25s}.btn-secondary:hover{border-color:var(--text-muted);background:var(--navy-light)}
+        .trust-text {font-size: 0.85rem; color: var(--text-muted); margin-bottom: 50px; display: block;}
+        .hero-video-container {position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; border:1px solid var(--border); box-shadow:0 16px 50px rgba(0,0,0,.35); max-width: 860px; margin: 0 auto;}
+        /* ... resto del CSS ... */
+    </style>
+</head>
+<body>
 
-<div class="hero-video-container fade-in">
-<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-src="https://www.youtube.com/embed/5W_f_lU5VvA" 
-title="Harmony Tutor — Presentazione Ufficiale"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
-</div></section>
+<nav id="navbar">
+    <a href="#" class="nav-brand">Harmony<span>Tutor</span></a>
+    <ul class="nav-links">
+        <li><a href="#funzioni">Funzioni</a></li>
+        <li><a href="#prezzi">Prezzi</a></li>
+        <li><a href="en.html">EN</a></li>
+    </ul>
+    <a href="#download-demo" class="nav-cta">Prova Gratis</a>
+</nav>
 
-<section id="demo-video">
-<div class="container fade-in" style="text-align:center;">
-<span class="section-tag">Approfondimenti</span>
-<h2 class="section-title">Esempi pratici di analisi</h2>
-<p class="section-desc center">Guarda come il motore di Harmony Tutor risolve i dubbi più comuni nello studio dell'armonia.</p>
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">L'unico editor SATB con analisi armonica in tempo reale</div>
+        <h1>Correggi i tuoi esercizi di<br><em>armonia</em> all'istante</h1>
+        <p class="hero-sub">Scrivi a quattro voci e ottieni feedback immediato su errori e cadenze.</p>
+        
+        <div class="hero-buttons">
+            <a href="#download-demo" class="btn-primary">Scarica la Demo</a>
+            <a href="#funzioni" class="btn-secondary">Scopri di più</a>
+        </div>
+        <span class="trust-text">✔ Download sicuro • Prova gratis 10 giorni</span>
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(480px, 1fr)); gap:24px; margin-top:32px;">
-
-<div>
-<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; border:1px solid var(--border); box-shadow:0 16px 50px rgba(0,0,0,.35);">
-<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-src="https://www.youtube.com/embed/S2C1l5E4Oto"
-title="Harmony Tutor — Seste eccedenti e Dominanti"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
-<p style="color:var(--text-muted); font-size:.88rem; margin-top:12px;">Analisi avanzata: Seste eccedenti vs Dominante</p>
-</div>
-
-<div>
-<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; border:1px solid var(--border); box-shadow:0 16px 50px rgba(0,0,0,.35);">
-<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-src="https://www.youtube.com/embed/8vB8A-rS8sY"
-title="Harmony Tutor — Risoluzione accordi diminuiti"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
-<p style="color:var(--text-muted); font-size:.88rem; margin-top:12px;">Accordi diminuiti: le 4 risoluzioni classiche</p>
-</div>
-
-  <div>
-<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; border:1px solid var(--border); box-shadow:0 16px 50px rgba(0,0,0,.35);">
-<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-src="https://www.youtube.com/embed/Vl7XN00YfR0"
-title="Harmony Tutor — Analisi di un corale"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
-<p style="color:var(--text-muted); font-size:.88rem; margin-top:12px;">Analisi armonica in tempo reale: Autumn Leaves</p>
-</div>
-
-  <div>
-<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; border:1px solid var(--border); box-shadow:0 16px 50px rgba(0,0,0,.35);">
-<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-src="https://www.youtube.com/embed/39iL33x-gQ0"
-title="Harmony Tutor — Video Tour Completo"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
-<p style="color:var(--text-muted); font-size:.88rem; margin-top:12px;">Tour delle funzionalità: SATB e cifratura funzionale</p>
-</div>
-
-</div>
-</div>
+        <div class="hero-video-container">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+                src="https://www.youtube.com/embed/5W_f_lU5VvA" 
+                title="Harmony Tutor" allowfullscreen></iframe>
+        </div>
+    </div>
 </section>
