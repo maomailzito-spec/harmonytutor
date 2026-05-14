@@ -46,17 +46,18 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto}
 footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:.82rem}footer a{color:var(--teal);text-decoration:none}.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap}
 @media(prefers-reduced-motion:no-preference){.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-toggle{display:block}nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}section{padding:60px 20px}.hero{padding-top:120px}.hero-buttons{flex-direction:column;align-items:center}.two-col{grid-template-columns:1fr}.cta-box{padding:40px 24px}}
+.faq-list{display:flex;flex-direction:column;gap:0}.faq-category{font-family:var(--serif);font-size:1.1rem;color:var(--teal);margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}.faq-category:first-child{margin-top:0}.faq-item{border-bottom:1px solid var(--border)}.faq-q{width:100%;background:none;border:none;padding:18px 0;text-align:left;cursor:pointer;font-family:var(--sans);font-size:.95rem;font-weight:500;color:var(--text-bright);display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}.faq-q:hover{color:var(--teal)}.faq-arrow{font-size:.8rem;color:var(--text-muted);transition:transform .3s;flex-shrink:0}.faq-item.open .faq-arrow{transform:rotate(180deg)}.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}.faq-item.open .faq-a{max-height:300px;padding-bottom:18px}.faq-a p{color:var(--text-muted);font-size:.9rem;line-height:1.7}
 </style>
 </head>
 <body>
 
-<nav id="navbar"><a href="#" class="nav-brand">Harmony<span>Tutor</span></a><ul class="nav-links"><li><a href="#features">Features</a></li><li><a href="#teaching">Teaching</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#resources">Manual</a></li><li><a href="index.html" class="lang-switch">IT</a></li></ul><a href="#download-trial" class="nav-cta">Try for Free</a><button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('open')" aria-label="Menu">&#9776;</button></nav>
+<nav id="navbar"><a href="#" class="nav-brand">Harmony<span>Tutor</span></a><ul class="nav-links"><li><a href="#features">Features</a></li><li><a href="#teaching">Teaching</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#resources">Manual</a></li><li><a href="#faq">FAQ</a></li><li><a href="index.html" class="lang-switch">IT</a></li></ul><a href="#download-trial" class="nav-cta">Try for Free</a><button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('open')" aria-label="Menu">&#9776;</button></nav>
 
 <section class="hero"><div class="container">
 <div class="hero-badge">The only SATB editor with real-time harmonic analysis</div>
 <h1>Fix your <em>harmony</em><br>assignments instantly</h1>
 <p class="hero-sub">Write in four voices and get real-time feedback on errors, cadences, and voice-leading. The essential app for music students and teachers.</p>
-<p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:10px; max-width:620px; margin-left:auto; margin-right:auto;">Based on the treatises of Dubois, Piston, Delamont and many others. Corpus of 260+ analyzed pieces.</p>
+<p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:10px; max-width:620px; margin-left:auto; margin-right:auto;">Built on Dubois, Piston and Pedron treatises. Corpus of 260+ analyzed pieces.</p>
 
 <div class="hero-buttons">
     <a href="#download-trial" class="btn-primary">Download Free Trial (10 Days)</a>
@@ -83,7 +84,7 @@ allowfullscreen></iframe>
 </div></section>
 
 <section class="problem" id="problem"><div class="container">
-<span class="section-tag"></span><h2 class="section-title">Why Harmony Tutor exists</h2>
+<span class="section-tag">The Problem</span><h2 class="section-title">Why Harmony Tutor exists</h2>
 <p class="section-desc">Harmony students get no immediate feedback at home. Mistakes accumulate and are only corrected in the next lesson.</p>
 <div class="problem-grid fade-in">
 <div class="problem-card"><h3>No feedback at home</h3><p>Students only discover their errors in class, when the context is already forgotten.</p></div>
@@ -211,12 +212,42 @@ allowfullscreen></iframe>
 <a href="Harmony_Tutor_Manual_EN.pdf" class="btn-secondary" download>&#8595; Download User Manual (PDF)</a>
 </div></section>
 
+<section id="faq" style="background:var(--navy-light); border-top:1px solid var(--border);">
+<div class="container">
+<div style="text-align:center">
+<span class="section-tag">FAQ</span>
+<h2 class="section-title" style="text-align:center">Need help?</h2>
+<p class="section-desc center">Answers to the most common questions about installation, usage and licenses.</p>
+</div>
+<div class="faq-list fade-in" style="max-width:760px; margin:0 auto;">
+<h3 class="faq-category">Licenses &amp; Installation</h3>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the difference between the free trial and Harmony Tutor Pro?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>The free trial includes all features for 10 days. After that, advanced features (harmonic analysis, chorale realizer, export) are disabled. Purchasing a Pro license unlocks everything permanently.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I install the software on a new computer if I switch?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Yes. Each license allows 2 activations. If you switch computers, deactivate the license on the old device and reactivate on the new one. Contact us by email if you need help.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does it work on both Windows and Mac?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Yes. Harmony Tutor is available for macOS (10.15+) and Windows (10/11). One license covers both platforms.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Windows shows "PC protected" during installation. What do I do?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>This is a standard Windows SmartScreen warning for newer applications. Click "More info" then "Run anyway". The application is safe and digitally signed.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens after the 10-day trial?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>The application continues to work as a basic editor, but harmonic analysis, chorale realizer, and export options are disabled. You can purchase a license at any time to reactivate them.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I activate my purchased license?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>After purchase you'll receive a license key by email. Open Harmony Tutor, go to Preferences → License, enter the code and click "Activate". Internet connection required.</p></div></div>
+<h3 class="faq-category">Note Input &amp; Writing</h3>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">I can't insert notes with the mouse. Why?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Note input requires holding <strong>Ctrl</strong> (Windows) or <strong>Cmd</strong> (Mac). Hold the key, move the mouse over the staff and you'll see a transparent "ghost note" as a guide. Click to place the note. Also make sure you've selected the correct voice (S/A/T/B) and are in the right staff.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I change voice, duration, or delete a note?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p><strong>Change voice:</strong> press V or click S/A/T/B in the toolbar. <strong>Duration:</strong> number keys (1-7) or toolbar. <strong>Delete:</strong> select the note and press Delete/Backspace. See the manual for all keyboard shortcuts.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use a MIDI keyboard to write exercises?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Yes. Connect your MIDI keyboard, select the voice and duration, then play the desired note. MIDI input works in step-input mode: one note at a time, in the order you play them.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I import files from MuseScore, Finale or Sibelius?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Yes, via MusicXML 4.0 format. Export your file as MusicXML from your notation software, then in Harmony Tutor go to File → Import MusicXML. MIDI import is also supported.</p></div></div>
+<h3 class="faq-category">Harmonic Analysis</h3>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">The analysis shows a chord that seems wrong. What can I do?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Click the Roman numeral label to open the analysis panel: you'll see the root, candidates, reliability score and alternative readings. If the analysis is wrong, you can override manually with a right-click on the label.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I see modern chord symbols instead of Roman numerals?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Yes, both displays are independent. In the toolbar you'll find toggles to enable/disable Roman numerals (below the staff) and modern chord symbols (above the staff). You can use both simultaneously or individually.</p></div></div>
+<h3 class="faq-category">Playback &amp; Listening</h3>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I listen to one voice at a time?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Yes. Use the volume controls for each voice (S, A, T, B) to mute or solo individual parts during playback.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How can I play the exercise through an external DAW (e.g. Logic Pro)?<span class="faq-arrow">&#9662;</span></button><div class="faq-a"><p>Export your work as MIDI (File → Export MIDI) and import it into your DAW. Each voice is exported on a separate MIDI channel, so you can assign different virtual instruments to each part.</p></div></div>
+</div>
+</div>
+</section>
+
 <section class="cta" id="contact"><div class="container"><div class="cta-box fade-in">
 <h2>Installation issues?</h2><p>Contact us for support, institutional inquiries or partnerships.</p>
 <a href="mailto:harmonytutorpro@gmail.com" class="btn-primary">Email Support</a>
 </div></div></section>
 
-<footer><div class="footer-links"><a href="#features">Features</a><a href="#teaching">Teaching</a><a href="#pricing">Pricing</a><a href="#resources">Manual</a><a href="mailto:harmonytutorpro@gmail.com">Contact</a><a href="index.html" class="lang-switch">IT</a></div><p>Harmony Tutor &mdash; The intelligent checker for tonal harmony</p><p style="margin-top:8px">&copy; 2026 &mdash; All rights reserved</p></footer>
+<footer><div class="footer-links"><a href="#features">Features</a><a href="#teaching">Teaching</a><a href="#pricing">Pricing</a><a href="#resources">Manual</a><a href="#faq">FAQ</a><a href="mailto:harmonytutorpro@gmail.com">Contact</a><a href="index.html" class="lang-switch">IT</a></div><p>Harmony Tutor &mdash; The intelligent checker for tonal harmony</p><p style="margin-top:8px">&copy; 2026 &mdash; All rights reserved</p></footer>
 
 <script>const f=document.querySelectorAll('.fade-in'),o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:.15});f.forEach(e=>o.observe(e))</script>
 </body>
