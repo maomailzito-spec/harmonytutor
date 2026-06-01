@@ -60,7 +60,7 @@ footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);co
 <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:10px; max-width:620px; margin-left:auto; margin-right:auto;">Basato sui trattati di Dubois, Piston e Pedron. Corpus di oltre 260 brani analizzati.</p>
 
 <div class="hero-buttons">
-    <a href="#download-demo" class="btn-primary">Scarica la Demo (10 Giorni)</a>
+    <a href="#download-demo" class="btn-primary" onclick="gtag('event', 'click_hero_cta', {language: 'it'});">Scarica la Demo (10 Giorni)</a>
     <a href="#demo-video" class="btn-secondary">Guarda le altre funzioni</a>
 </div>
 <span class="trust-text">&#10004; Download sicuro per macOS e Windows &bull; Nessuna carta di credito</span>
@@ -78,8 +78,8 @@ allowfullscreen></iframe>
 <span class="section-tag">Inizia Subito</span><h2 class="section-title" style="text-align:center; font-size: 2rem;">Tocca con mano la differenza</h2>
 <p class="section-desc center" style="margin-bottom: 24px;">Prova tutte le funzionalit&agrave; di Harmony Tutor per 10 giorni sul tuo computer. L'installazione richiede meno di un minuto.</p>
 <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-    <a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.0.17/Harmony.Tutor-1.0.17-win.exe" class="btn-primary">&#11015; Scarica per Windows (.exe)</a>
-    <a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.0.17/Harmony.Tutor-1.0.17-mac.dmg" class="btn-secondary" style="background:var(--navy-card); color:var(--text-bright);">&#11015; Scarica per macOS (.dmg)</a>
+    <a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.0.17/Harmony.Tutor-1.0.17-win.exe" class="btn-primary" onclick="gtag('event', 'download_windows', {language: 'it', version: '1.0.17'});">&#11015; Scarica per Windows (.exe)</a>
+    <a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.0.17/Harmony.Tutor-1.0.17-mac.dmg" class="btn-secondary" style="background:var(--navy-card); color:var(--text-bright);" onclick="gtag('event', 'download_mac', {language: 'it', version: '1.0.17'});">&#11015; Scarica per macOS (.dmg)</a>
 </div>
 <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-muted); text-align: center;">Versione attuale: <strong>v1.0.17</strong></p>
 </div></section>
@@ -229,7 +229,7 @@ allowfullscreen></iframe>
 <section id="prezzi"><div class="container"><div style="text-align:center"><span class="section-tag">Prezzi</span><h2 class="section-title" style="text-align:center">Acquisto una tantum</h2><p class="section-desc center">Nessun abbonamento. Compra solo se la demo ti ha convinto.</p></div>
 <div class="pricing-grid fade-in" style="max-width:640px;margin:48px auto 0">
 <div class="price-card featured"><div class="price-tier">Licenza completa</div><div class="price-amount">59&euro;</div><div class="price-note">una tantum &mdash; macOS e Windows</div><ul class="price-features"><li>Tutte le funzionalit&agrave; senza limiti</li><li>Analisi armonica in tempo reale</li><li>Realizzatore corali automatico</li><li>Export PDF, MIDI, MusicXML, PNG</li><li>Aggiornamenti inclusi</li><li>Supporto via email</li></ul>
-<a href="https://harmonytutor.lemonsqueezy.com/checkout/buy/a5930998-3037-4c81-9990-2ebe269c7911" class="price-btn price-btn-primary" target="_blank" rel="noopener">Acquista licenza</a>
+<a href="https://harmonytutor.lemonsqueezy.com/checkout/buy/a5930998-3037-4c81-9990-2ebe269c7911" class="price-btn price-btn-primary" target="_blank" rel="noopener" onclick="gtag('event', 'click_buy_now', {language: 'it', value: 59, currency: 'EUR'});">Acquista licenza</a>
 </div>
 <div class="price-card"><div class="price-tier">Istituto</div><div class="price-amount" style="font-size:2rem;">da 39&euro;<span>/licenza</span></div><div class="price-note">licenze multiple per aule e laboratori</div><ul class="price-features"><li>Tutte le funzionalit&agrave;</li><li>Licenze per aula/laboratorio</li><li>Supporto dedicato</li><li>Fatturazione istituzionale</li><li>Sconto volume</li></ul><a href="mailto:harmonytutorpro@gmail.com" class="price-btn price-btn-secondary">Richiedi preventivo</a></div>
 </div></div></section>
@@ -237,7 +237,7 @@ allowfullscreen></iframe>
 <section id="risorse"><div class="container" style="text-align:center">
 <span class="section-tag">Risorse</span><h2 class="section-title" style="text-align:center">Documentazione</h2>
 <p class="section-desc center">Scarica il manuale utente completo con tutte le funzionalit&agrave;, scorciatoie e istruzioni dettagliate.</p>
-<a href="Harmony_Tutor_Manuale.pdf" class="btn-secondary" download>&#8595; Scarica il manuale utente (PDF)</a>
+<a href="Harmony_Tutor_Manuale.pdf" class="btn-secondary" download onclick="gtag('event', 'download_manual', {language: 'it'});">&#8595; Scarica il manuale utente (PDF)</a>
 </div></section>
 
 <section id="faq" style="background:var(--navy-light); border-top:1px solid var(--border);">
@@ -272,7 +272,7 @@ allowfullscreen></iframe>
 
 <section class="cta" id="contatti"><div class="container"><div class="cta-box fade-in">
 <h2>Hai dubbi sull'installazione?</h2><p>Scrivici per informazioni, supporto tecnico o richieste per il conservatorio.</p>
-<a href="mailto:harmonytutorpro@gmail.com" class="btn-primary">Contattaci via Email</a>
+<a href="mailto:harmonytutorpro@gmail.com" class="btn-primary" onclick="gtag('event', 'contact_email', {language: 'it'});">Contattaci via Email</a>
 </div></div></section>
 
 <footer><div class="footer-links"><a href="#funzioni">Funzioni</a><a href="#didattica">Didattica</a><a href="#prezzi">Prezzi</a><a href="#risorse">Manuale</a><a href="#faq">FAQ</a><a href="mailto:harmonytutorpro@gmail.com">Contatti</a><a href="en.html" class="lang-switch">EN</a></div><p>Harmony Tutor &mdash; L'editor intelligente per l'armonia tonale</p><p style="margin-top:8px">&copy; 2026 &mdash; Tutti i diritti riservati</p></footer>
