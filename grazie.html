@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+<head>
+<meta charset="UTF-8">
+<!-- Pagina d'arrivo dopo l'acquisto: nell'indirizzo ci sono i dati dell'ordine, non va nei motori di ricerca. -->
+<meta name="robots" content="noindex, nofollow">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L62VXGSS2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5L62VXGSS2');
+</script>
+<script>
+/* L'ACQUISTO, DETTO A GA4 UNA VOLTA SOLA PER ORDINE.
+   Lemon Squeezy apre questa pagina con ?order_id=…&total=… (le variabili [order_id] e [total]
+   del pulsante di conferma). `total` arriva «formattato» (es. «€69.00» o «69,00 €»): qui diventa
+   un numero. Il segno «già inviato» sta nel browser, per ordine: ricaricare la pagina o tornarci
+   dal segnalibro non conta un secondo acquisto. */
+function htTotaleComeNumero(testo){
+  if (testo === null || testo === undefined) return null;
+  var t = String(testo).replace(/[^\d.,]/g, '');
+  if (!/\d/.test(t)) return null;
+  // L'ultimo separatore è quello dei decimali solo se lo seguono una o due cifre;
+  // con tre cifre («1,000», «1.234») è un separatore delle migliaia.
+  var ultimo = Math.max(t.lastIndexOf(','), t.lastIndexOf('.'));
+  var interi = t, decimali = '';
+  if (ultimo >= 0) {
+    var dopo = t.length - ultimo - 1;
+    if (dopo === 1 || dopo === 2) { interi = t.slice(0, ultimo); decimali = t.slice(ultimo + 1); }
+  }
+  interi = interi.replace(/[.,]/g, '');
+  var n = Number((interi || '0') + (decimali ? '.' + decimali : ''));
+  return isFinite(n) ? n : null;
+}
+var htOrdine = (function(){
+  var p;
+  try { p = new URLSearchParams(window.location.search); } catch (e) { return { id: '', totale: null }; }
+  var id = (p.get('order_id') || '').trim();
+  // Una variabile non sostituita («[order_id]») non è un ordine.
+  if (/^\[.*\]$/.test(id)) id = '';
+  return { id: id, totale: htTotaleComeNumero(p.get('total')) };
+})();
+(function(){
+  if (!htOrdine.id) return;
+  var chiave = 'ht_purchase_inviato_' + htOrdine.id;
+  try { if (window.localStorage.getItem(chiave) === '1') return; } catch (e) {}
+  var evento = { transaction_id: htOrdine.id, currency: 'EUR' };
+  if (htOrdine.totale !== null) evento.value = htOrdine.totale;
+  gtag('event', 'purchase', evento);
+  try { window.localStorage.setItem(chiave, '1'); } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grazie per l'acquisto — Harmony Tutor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1923;--navy-light:#162030;--navy-card:#1a2a3c;--teal:#2ec4a0;--teal-dim:#1a8a70;--gold:#e8a838;--coral:#e8593c;--text:#d0d8e0;--text-bright:#eef2f5;--text-muted:#7a8a9a;--border:#243040;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--navy);color:var(--text);line-height:1.7;font-size:17px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,25,35,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--serif);font-size:1.25rem;color:var(--text-bright);text-decoration:none}.nav-brand span{color:var(--teal)}
+section{padding:72px 24px}.container{max-width:1080px;margin:0 auto}
+.hero{padding-top:140px;padding-bottom:64px;text-align:center;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(46,196,160,.08)0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-block;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:600;color:var(--teal);border:1px solid var(--teal-dim);background:rgba(46,196,160,.08);margin-bottom:28px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,3.4rem);color:var(--text-bright);line-height:1.15;margin-bottom:20px}.hero h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:1.15rem;color:var(--text-muted);max-width:620px;margin:0 auto;line-height:1.8}
+.order-line{margin-top:28px;font-size:.92rem;color:var(--text-muted)}.order-line strong{color:var(--text-bright);font-weight:600;overflow-wrap:anywhere}
+.btn-primary{background:var(--teal);color:var(--navy);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s;display:inline-flex;align-items:center;gap:8px}.btn-primary:hover{background:#25d4aa;transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,196,160,.25)}
+.btn-secondary{background:var(--navy-card);color:var(--text-bright);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;border:1px solid var(--border);transition:all .25s}.btn-secondary:hover{border-color:var(--text-muted);background:var(--navy-light)}
+.section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}.section-title{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.2rem);color:var(--text-bright);margin-bottom:16px;line-height:1.2}.section-desc{color:var(--text-muted);font-size:1.05rem;max-width:640px;margin:0 auto 28px}
+.downloads{background:var(--navy-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+.download-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.small-note{font-size:.85rem;color:var(--text-muted);margin-top:16px}
+.steps-card{background:var(--navy-card);border:1px solid var(--border);border-radius:20px;padding:40px;max-width:760px;margin:0 auto}
+.steps{list-style:none}.steps li{display:flex;gap:14px;margin-bottom:20px;color:var(--text-muted);font-size:.98rem}.steps li:last-child{margin-bottom:0}.steps .num{color:var(--teal);font-weight:700;flex-shrink:0}.steps strong{color:var(--text-bright);font-weight:600}
+.steps-note{margin-top:28px;padding:14px 18px;border-radius:10px;background:rgba(46,196,160,.05);border:1px dashed var(--teal-dim);font-size:.88rem;color:var(--text-muted)}
+.cta{text-align:center;background:linear-gradient(180deg,var(--navy)0%,var(--navy-light)100%)}.cta-box{background:var(--navy-card);border:1px solid var(--border);border-radius:20px;padding:60px 40px;max-width:680px;margin:0 auto}.cta-box h2{font-family:var(--serif);font-size:2rem;color:var(--text-bright);margin-bottom:16px;line-height:1.2}.cta-box p{color:var(--text-muted);margin-bottom:32px}.cta-box .mail{margin:18px 0 0;font-size:.88rem}.cta-box .mail a{color:var(--teal);text-decoration:none;overflow-wrap:anywhere}
+footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:.82rem}footer a{color:var(--teal);text-decoration:none}.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;border:1px solid var(--border);font-size:.78rem;color:var(--text-muted);text-decoration:none;font-weight:600;transition:all .2s;cursor:pointer}.lang-switch:hover{border-color:var(--teal);color:var(--teal)}
+@media(max-width:768px){section{padding:52px 16px}.hero{padding-top:110px;padding-bottom:48px}.steps-card{padding:28px 20px}.cta-box{padding:40px 24px}.download-buttons{flex-direction:column;align-items:stretch}.btn-primary,.btn-secondary{justify-content:center;text-align:center;padding:14px 20px}}
+/* Le due lingue stanno nella stessa pagina: se ne mostra una. */
+html[data-lang="it"] [lang="en"],html[data-lang="en"] [lang="it"]{display:none !important}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+<a href="index.html" class="nav-brand" data-home>Harmony<span>Tutor</span></a>
+<a href="?lang=en" class="lang-switch" data-lang-switch lang="it" aria-label="English version">EN</a>
+<a href="?lang=it" class="lang-switch" data-lang-switch lang="en" aria-label="Versione italiana">IT</a>
+</nav>
+
+<section class="hero"><div class="container">
+<div lang="it">
+<div class="hero-badge">&#10004; Acquisto completato</div>
+<h1>Grazie per aver scelto<br><em>Harmony Tutor</em></h1>
+<p class="hero-sub">La chiave di licenza ti arriva per email, insieme alla ricevuta. Qui sotto trovi l'app da scaricare e i tre passi per attivarla.</p>
+<p class="order-line" data-order-line hidden>Numero d'ordine: <strong data-order-id></strong></p>
+</div>
+<div lang="en">
+<div class="hero-badge">&#10004; Purchase complete</div>
+<h1>Thank you for choosing<br><em>Harmony Tutor</em></h1>
+<p class="hero-sub">Your license key is on its way by email, together with the receipt. Below you'll find the app to download and the three steps to activate it.</p>
+<p class="order-line" data-order-line hidden>Order number: <strong data-order-id></strong></p>
+</div>
+</div></section>
+
+<section class="downloads" id="download"><div class="container">
+<div lang="it">
+<span class="section-tag">1 &middot; Scarica</span>
+<h2 class="section-title">Scarica Harmony Tutor</h2>
+<p class="section-desc">Se hai gi&agrave; installato la versione di prova non devi scaricare niente: basta inserire la licenza.</p>
+<div class="download-buttons">
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.20.0/Harmony.Tutor-1.20.0-win.exe" class="btn-primary" onclick="gtag('event', 'download_windows', {language: 'it', page: 'grazie'});">&#11015; Scarica per Windows (.exe)</a>
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.20.0/Harmony.Tutor-1.20.0-arm64-mac.dmg" class="btn-secondary" onclick="gtag('event', 'download_mac_silicon', {language: 'it', page: 'grazie'});">&#11015; Scarica per Mac Apple Silicon (M1/M2/M3/M4)</a>
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.20.0/Harmony.Tutor-1.20.0-x64-mac.dmg" class="btn-secondary" onclick="gtag('event', 'download_mac_intel', {language: 'it', page: 'grazie'});">&#11015; Scarica per Mac Intel (.dmg)</a>
+</div>
+<p class="small-note">Non sai quale Mac hai? Menu Apple &#63743; &rarr; &laquo;Informazioni su questo Mac&raquo; &rarr; voce &laquo;Chip&raquo;: se compare &laquo;Apple M&hellip;&raquo; scegli Apple Silicon, altrimenti Intel.</p>
+<p class="small-note">Versione attuale: <strong>v1.20.0</strong></p>
+</div>
+<div lang="en">
+<span class="section-tag">1 &middot; Download</span>
+<h2 class="section-title">Download Harmony Tutor</h2>
+<p class="section-desc">If you have already installed the trial version there is nothing to download: just enter your license.</p>
+<div class="download-buttons">
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.20.0/Harmony.Tutor-1.20.0-win.exe" class="btn-primary" onclick="gtag('event', 'download_windows', {language: 'en', page: 'grazie'});">&#11015; Download for Windows (.exe)</a>
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.20.0/Harmony.Tutor-1.20.0-arm64-mac.dmg" class="btn-secondary" onclick="gtag('event', 'download_mac_silicon', {language: 'en', page: 'grazie'});">&#11015; Download for Mac Apple Silicon (M1/M2/M3/M4)</a>
+<a href="https://github.com/maomailzito-spec/harmony-tutor-releases/releases/download/v1.20.0/Harmony.Tutor-1.20.0-x64-mac.dmg" class="btn-secondary" onclick="gtag('event', 'download_mac_intel', {language: 'en', page: 'grazie'});">&#11015; Download for Mac Intel (.dmg)</a>
+</div>
+<p class="small-note">Not sure which Mac you have? Apple menu &#63743; &rarr; &ldquo;About This Mac&rdquo; &rarr; &ldquo;Chip&rdquo;: if it says &ldquo;Apple M&hellip;&rdquo; choose Apple Silicon, otherwise Intel.</p>
+<p class="small-note">Current version: <strong>v1.20.0</strong></p>
+</div>
+</div></section>
+
+<section id="licenza"><div class="container">
+<div lang="it">
+<div style="text-align:center"><span class="section-tag">2 &middot; Attiva</span><h2 class="section-title">Come inserire la licenza</h2></div>
+<div class="steps-card">
+<ol class="steps">
+<li><span class="num">01.</span><span><strong>Copia la chiave di licenza</strong> dall'email che ricevi dopo l'acquisto. Se non la vedi entro qualche minuto, guarda nella posta indesiderata.</span></li>
+<li><span class="num">02.</span><span><strong>Apri Harmony Tutor e la finestra della licenza.</strong> Su Mac: men&ugrave; Harmony Tutor &rarr; &laquo;Gestisci Licenza&hellip;&raquo;. Su Windows: men&ugrave; Visualizza &rarr; &laquo;Gestisci Licenza&hellip;&raquo;. Se la prova &egrave; gi&agrave; scaduta, la finestra compare da s&eacute; all'avvio.</span></li>
+<li><span class="num">03.</span><span><strong>Incolla la chiave e clicca &laquo;Attiva&raquo;.</strong> In quel momento serve la connessione a internet.</span></li>
+</ol>
+<p class="steps-note">La licenza vale per Mac e per Windows e comprende 2 attivazioni. Se cambi computer, disattivala sul vecchio e attivala sul nuovo.</p>
+</div>
+</div>
+<div lang="en">
+<div style="text-align:center"><span class="section-tag">2 &middot; Activate</span><h2 class="section-title">How to enter your license</h2></div>
+<div class="steps-card">
+<ol class="steps">
+<li><span class="num">01.</span><span><strong>Copy the license key</strong> from the email you receive after the purchase. If you don't see it within a few minutes, check your spam folder.</span></li>
+<li><span class="num">02.</span><span><strong>Open Harmony Tutor and the license window.</strong> On Mac: Harmony Tutor menu &rarr; &ldquo;Manage License&hellip;&rdquo;. On Windows: View menu &rarr; &ldquo;Manage License&hellip;&rdquo;. If the trial has already expired, the window appears by itself at startup.</span></li>
+<li><span class="num">03.</span><span><strong>Paste the key and click &ldquo;Activate&rdquo;.</strong> An internet connection is needed at that moment.</span></li>
+</ol>
+<p class="steps-note">The license is valid for Mac and Windows and includes 2 activations. If you change computer, deactivate it on the old one and activate it on the new one.</p>
+</div>
+</div>
+</div></section>
+
+<section class="cta" id="assistenza"><div class="container"><div class="cta-box">
+<div lang="it">
+<h2>Qualcosa non va?</h2>
+<p>Se la chiave non arriva o l'attivazione non riesce, scrivici indicando il numero d'ordine: ti rispondiamo noi.</p>
+<a href="mailto:harmonytutorpro@gmail.com" class="btn-primary" data-mail="Harmony Tutor — assistenza" data-mail-order="ordine" onclick="gtag('event', 'contact_email', {language: 'it', page: 'grazie'});">Scrivi all'assistenza</a>
+<p class="mail"><a href="mailto:harmonytutorpro@gmail.com">harmonytutorpro@gmail.com</a></p>
+</div>
+<div lang="en">
+<h2>Something not working?</h2>
+<p>If the key doesn't arrive or the activation fails, write to us quoting your order number: we will reply personally.</p>
+<a href="mailto:harmonytutorpro@gmail.com" class="btn-primary" data-mail="Harmony Tutor — support" data-mail-order="order" onclick="gtag('event', 'contact_email', {language: 'en', page: 'grazie'});">Contact support</a>
+<p class="mail"><a href="mailto:harmonytutorpro@gmail.com">harmonytutorpro@gmail.com</a></p>
+</div>
+</div></div></section>
+
+<footer>
+<div class="footer-links" lang="it"><a href="index.html">Sito</a><a href="Harmony_Tutor_Manuale_ITA.pdf">Manuale</a><a href="index.html#faq">FAQ</a><a href="mailto:harmonytutorpro@gmail.com">Contatti</a><a href="?lang=en" class="lang-switch" data-lang-switch>EN</a></div>
+<div class="footer-links" lang="en"><a href="en.html">Website</a><a href="Harmony_Tutor_Manual_EN.pdf">Manual</a><a href="en.html#faq">FAQ</a><a href="mailto:harmonytutorpro@gmail.com">Contact</a><a href="?lang=it" class="lang-switch" data-lang-switch>IT</a></div>
+<p lang="it">Harmony Tutor &mdash; L'editor intelligente per l'armonia tonale</p>
+<p lang="en">Harmony Tutor &mdash; The intelligent checker for tonal harmony</p>
+<p style="margin-top:8px" lang="it">&copy; 2026 &mdash; Tutti i diritti riservati</p>
+<p style="margin-top:8px" lang="en">&copy; 2026 &mdash; All rights reserved</p>
+</footer>
+
+<script>
+(function(){
+  var radice = document.documentElement;
+  var titoli = { it: "Grazie per l'acquisto — Harmony Tutor", en: 'Thank you for your purchase — Harmony Tutor' };
+  var parametri;
+  try { parametri = new URLSearchParams(window.location.search); } catch (e) { parametri = null; }
+
+  // LA LINGUA: quella chiesta nell'indirizzo (?lang=it|en), altrimenti quella del browser.
+  // L'indirizzo che Lemon Squeezy apre è uno solo per tutti i clienti: la pagina sceglie da sé.
+  function linguaIniziale(){
+    var chiesta = parametri && (parametri.get('lang') || '').toLowerCase();
+    if (chiesta === 'it' || chiesta === 'en') return chiesta;
+    var browser = ((navigator.languages && navigator.languages[0]) || navigator.language || 'it').toLowerCase();
+    return browser.indexOf('it') === 0 ? 'it' : 'en';
+  }
+  function mostra(lingua){
+    radice.setAttribute('data-lang', lingua);
+    radice.setAttribute('lang', lingua);
+    document.title = titoli[lingua];
+    var casa = document.querySelector('[data-home]');
+    if (casa) casa.setAttribute('href', lingua === 'it' ? 'index.html' : 'en.html');
+  }
+  mostra(linguaIniziale());
+
+  // Il cambio di lingua non ricarica la pagina e non perde i dati dell'ordine nell'indirizzo.
+  var cambi = document.querySelectorAll('[data-lang-switch]');
+  for (var i = 0; i < cambi.length; i++) {
+    cambi[i].addEventListener('click', function(ev){
+      ev.preventDefault();
+      var nuova = radice.getAttribute('data-lang') === 'it' ? 'en' : 'it';
+      mostra(nuova);
+      try {
+        var p = new URLSearchParams(window.location.search);
+        p.set('lang', nuova);
+        window.history.replaceState(null, '', window.location.pathname + '?' + p.toString());
+      } catch (e) {}
+    });
+  }
+
+  // Il numero d'ordine in vista, e già scritto nell'oggetto della mail all'assistenza.
+  if (typeof htOrdine !== 'undefined' && htOrdine.id) {
+    var numeri = document.querySelectorAll('[data-order-id]');
+    for (var j = 0; j < numeri.length; j++) numeri[j].textContent = htOrdine.id;
+    var righe = document.querySelectorAll('[data-order-line]');
+    for (var k = 0; k < righe.length; k++) righe[k].hidden = false;
+    var mail = document.querySelectorAll('[data-mail]');
+    for (var m = 0; m < mail.length; m++) {
+      var oggetto = mail[m].getAttribute('data-mail') + ' (' + mail[m].getAttribute('data-mail-order') + ' ' + htOrdine.id + ')';
+      mail[m].setAttribute('href', 'mailto:harmonytutorpro@gmail.com?subject=' + encodeURIComponent(oggetto));
+    }
+  }
+})();
+</script>
+</body>
+</html>
